@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Peter Mazzocco - Full Stack Dev</title>
+        <title>Peter Mazzocco - Full Stack & AI Engineer</title>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
@@ -15,63 +15,374 @@
             body {
                 font-family: "JetBrains Mono", monospace;
             }
+            .tab-btn {
+                transition: color 0.15s ease;
+            }
+            .tab-panel {
+                animation: fadeUp 0.25s ease;
+            }
+            @keyframes fadeUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(4px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
         </style>
     </head>
     <body
         class="bg-white text-gray-900 min-h-screen flex flex-col justify-center items-center"
     >
-        <section class="max-w-xl mx-auto px-6 py-20">
-            <div class="mb-8">
-                <div class="flex flex-col items-center sm:items-start">
-                    <img
-                        src="./headshot.png"
-                        alt="Profile Picture"
-                        class="w-24 h-24 rounded-full mb-4"
-                    />
-                    <h2 class="text-md font-base mb-1">Peter Mazzocco</h2>
-                    <p class="text-xs font-base mb-4 text-gray-400">
-                        Full-Stack Developer
-                    </p>
+        <section class="max-w-xl w-full mx-auto px-6 py-20">
+            <!-- Header -->
+            <div class="flex flex-col items-center sm:items-start">
+                <img
+                    src="./headshot.png"
+                    alt="Profile Picture"
+                    class="w-24 h-24 rounded-full mb-4"
+                />
+                <h2 class="text-md mb-1">Peter Mazzocco</h2>
+                <p class="text-xs mb-4 text-gray-400">
+                    Full-Stack & AI Engineer — Beaverton, OR
+                </p>
 
-                    <p
-                        class="text-sm text-center sm:text-left text-gray-600 mb-4 leading-relaxed"
+                <p
+                    class="text-sm text-center sm:text-left text-gray-600 mb-2 leading-relaxed"
+                >
+                    Building applications with TypeScript, Golang, Python,
+                    Solidity and more.
+                    <br />
+                    Currently building
+                    <a
+                        href="https://coordinator.co"
+                        target="_blank"
+                        class="text-blue-600 underline underline-offset-4"
                     >
-                        Building applications with TypeScript, Golang, Python,
-                        Solidity and more.
-                    </p>
+                        COORDINATOR
+                    </a>
+                </p>
+            </div>
 
-                    <div class="flex flex-col gap-2 text-sm">
-                        <a
-                            href="https://github.com/petermazzocco"
-                            target="_blank"
-                            class="text-blue-600 underline underline-offset-4 w-fit"
-                        >
-                            GitHub
-                        </a>
-                        <a
-                            href="https://www.linkedin.com/in/petermazzocco/"
-                            target="_blank"
-                            class="text-blue-600 underline underline-offset-4 w-fit"
-                        >
-                            LinkedIn
-                        </a>
-                        <a
-                            href="https://bsky.app/profile/hellopeter.dev"
-                            target="_blank"
-                            class="text-blue-600 underline underline-offset-4 w-fit"
-                        >
-                            Bluesky
-                        </a>
-                        <a
-                            href="mailto:petermazzocco@gmail.com"
-                            target="_blank"
-                            class="text-blue-600 underline underline-offset-4 w-fit"
-                        >
-                            Contact
-                        </a>
+            <!-- Tabs -->
+            <nav
+                class="flex gap-5 sm:gap-6 text-sm mt-6 border-b border-gray-200"
+                role="tablist"
+                aria-label="Sections"
+            >
+                <button
+                    data-tab="aiml"
+                    role="tab"
+                    aria-selected="true"
+                    class="tab-btn pb-2 -mb-px border-b-2 border-blue-600 text-gray-900"
+                >
+                    AI / ML
+                </button>
+                <button
+                    data-tab="blockchain"
+                    role="tab"
+                    aria-selected="false"
+                    class="tab-btn pb-2 -mb-px border-b-2 border-transparent text-gray-400 hover:text-gray-900"
+                >
+                    Blockchain
+                </button>
+                <button
+                    data-tab="engineering"
+                    role="tab"
+                    aria-selected="false"
+                    class="tab-btn pb-2 -mb-px border-b-2 border-transparent text-gray-400 hover:text-gray-900"
+                >
+                    Engineering
+                </button>
+            </nav>
+
+            <!-- AI / ML -->
+            <div id="tab-aiml" role="tabpanel" class="tab-panel pt-6">
+                <p class="text-sm text-gray-900 leading-relaxed">
+                    I build agentic systems, not chatbots.
+                </p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2">
+                    LLM infrastructure + the evals and harnesses that make
+                    agents reliable in production.
+                </p>
+
+                <div class="flex flex-col gap-4 text-sm mt-6">
+                    <div>
+                        <p class="text-gray-900">Orchestration + harnesses</p>
+                        <p class="text-gray-600 mt-1 leading-relaxed">
+                            Multi-agent orchestration, tool-calling harnesses,
+                            MCP servers, sandboxed execution for long-running
+                            autonomous workflows.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-gray-900">Reliability is measurable</p>
+                        <p class="text-gray-600 mt-1 leading-relaxed">
+                            Regression evals, tracing / observability,
+                            guardrails, human-in-the-loop review.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-gray-900">Retrieval + memory</p>
+                        <p class="text-gray-600 mt-1 leading-relaxed">
+                            RAG & vector retrieval, context + memory management,
+                            prompt engineering that survives prod. Exploring
+                            JEPA / World Models, fine-tuning + inference
+                            optimization.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-5 border-t border-gray-100 text-sm">
+                    <p class="text-xs text-gray-400 mb-3">PROOF</p>
+                    <div class="flex flex-col gap-3">
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <a
+                                href="https://coordinator.co"
+                                target="_blank"
+                                class="text-blue-600 underline underline-offset-4"
+                                >COORDINATOR</a
+                            >
+                            <span class="text-gray-400 text-xs">
+                                — Lead / Co-Founder</span
+                            >
+                            <br />Custom agent runtimes from scratch in Go,
+                            Python, Swift, TypeScript.
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <a
+                                href="https://prism.sh/"
+                                target="_blank"
+                                class="text-blue-600 underline underline-offset-4"
+                                >Prism — Trvstless</a
+                            >
+                            <span class="text-gray-400 text-xs">
+                                — Founding Engineer</span
+                            >
+                            <br />LLM dev tooling on Solana with Vercel AI SDK
+                            over OpenAI, Anthropic, LangChain.
+                        </p>
                     </div>
                 </div>
             </div>
+
+            <!-- Blockchain -->
+            <div
+                id="tab-blockchain"
+                role="tabpanel"
+                class="tab-panel pt-6 hidden"
+            >
+                <p class="text-sm text-gray-900 leading-relaxed">
+                    I ship and audit on-chain systems end to end.
+                </p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2">
+                    Contracts, front-ends, and the caching layers that make
+                    on-chain data usable.
+                </p>
+
+                <div class="flex flex-col gap-4 text-sm mt-6">
+                    <div>
+                        <p class="text-gray-900">Contracts</p>
+                        <p class="text-gray-600 mt-1 leading-relaxed">
+                            Solidity dev + auditing across EVM mainnets and
+                            testnets. EVM L1/L2s + Solana.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-gray-900">dApp stack</p>
+                        <p class="text-gray-600 mt-1 leading-relaxed">
+                            wagmi, viem, Ethers, ThirdWeb, Alchemy. Redis /
+                            Postgres / MySQL caching layers for on-chain data.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-5 border-t border-gray-100 text-sm">
+                    <p class="text-xs text-gray-400 mb-3">PROOF</p>
+                    <div class="flex flex-col gap-3">
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <a
+                                href="https://www.pvp.money/"
+                                target="_blank"
+                                class="text-blue-600 underline underline-offset-4"
+                                >PVP — Dappd</a
+                            >
+                            <span class="text-gray-400 text-xs">
+                                — Sr. Full Stack / TPM</span
+                            >
+                            <br />Built + maintained secure dApps in React /
+                            Next / TS. Wrote, deployed, audited contracts.
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <a
+                                href="https://prism.sh/"
+                                target="_blank"
+                                class="text-blue-600 underline underline-offset-4"
+                                >Prism — Trvstless</a
+                            >
+                            <span class="text-gray-400 text-xs">
+                                — Solana tooling</span
+                            >
+                            <br />LLM-powered developer tooling on Solana.
+                        </p>
+                        <p class="text-xs text-gray-400 leading-relaxed mt-1">
+                            Alchemy University, Certified Ethereum Developer
+                            (2022–23).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Engineering -->
+            <div
+                id="tab-engineering"
+                role="tabpanel"
+                class="tab-panel pt-6 hidden"
+            >
+                <p class="text-sm text-gray-900 leading-relaxed">
+                    I own product from concept to production.
+                </p>
+                <p class="text-sm text-gray-600 leading-relaxed mt-2">
+                    Traditional full-stack: services, infra, front-end, and
+                    leading the teams that ship them.
+                </p>
+
+                <div class="flex flex-col gap-4 text-sm mt-6">
+                    <div>
+                        <p class="text-gray-900">Backend + infra</p>
+                        <p class="text-gray-600 mt-1 leading-relaxed">
+                            Golang services, Node.js REST APIs, microservices.
+                            AWS, Docker, Kubernetes, CI/CD. Postgres, Redis,
+                            MySQL. Observability + tracing.
+                        </p>
+                    </div>
+                    <div>
+                        <p class="text-gray-900">Frontend + product</p>
+                        <p class="text-gray-600 mt-1 leading-relaxed">
+                            React, Next.js, TypeScript, Tailwind, shadcn,
+                            TanStack, Vite, SwiftUI. WCAG / ARIA. User feedback
+                            + metrics driving iteration.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-6 pt-5 border-t border-gray-100 text-sm">
+                    <p class="text-xs text-gray-400 mb-3">PROOF</p>
+                    <div class="flex flex-col gap-3">
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            <a
+                                href="https://www.lockerverse.com/"
+                                target="_blank"
+                                class="text-blue-600 underline underline-offset-4"
+                                >Lockerverse</a
+                            >
+                            <span class="text-gray-400 text-xs">
+                                — Full Stack, Dec 2024–Nov 2025</span
+                            >
+                            <br />Lead product + front-end for NIL platform
+                            (collectives, athletes, fans, sponsors). NIL
+                            regulatory compliance.
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            Dam Nation Collective
+                            <span class="text-gray-400 text-xs">
+                                — Lead / VP, team of 7</span
+                            >
+                            <br />All software + digital ops for Oregon State's
+                            NIL collective. 7-figures raised, 50M+ impressions in
+                            a year.
+                        </p>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            WeLocalize
+                            <span class="text-gray-400 text-xs">
+                                — Data Specialist, 2018–2022</span
+                            >
+                            <br />Natural-language processing — curated,
+                            verified + optimized training data for a widely
+                            deployed LLM for a Fortune 100 company.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Socials / footer -->
+            <footer
+                class="mt-12 pt-6 border-t border-gray-100 flex flex-wrap gap-x-5 gap-y-2 text-sm"
+            >
+                <a
+                    href="https://github.com/petermazzocco"
+                    target="_blank"
+                    class="text-blue-600 underline underline-offset-4 w-fit"
+                >
+                    GitHub
+                </a>
+                <a
+                    href="https://www.linkedin.com/in/petermazzocco/"
+                    target="_blank"
+                    class="text-blue-600 underline underline-offset-4 w-fit"
+                >
+                    LinkedIn
+                </a>
+                <a
+                    href="https://www.threads.com/@petermazzocco"
+                    target="_blank"
+                    class="text-blue-600 underline underline-offset-4 w-fit"
+                >
+                    Threads
+                </a>
+                <a
+                    href="https://x.com/petermazzocco"
+                    target="_blank"
+                    class="text-blue-600 underline underline-offset-4 w-fit"
+                >
+                    Twitter
+                </a>
+                <a
+                    href="mailto:petermazzocco@gmail.com"
+                    target="_blank"
+                    class="text-blue-600 underline underline-offset-4 w-fit"
+                >
+                    Contact
+                </a>
+            </footer>
         </section>
+
+        <script>
+            const buttons = document.querySelectorAll(".tab-btn");
+            const panels = {
+                aiml: document.getElementById("tab-aiml"),
+                blockchain: document.getElementById("tab-blockchain"),
+                engineering: document.getElementById("tab-engineering"),
+            };
+
+            const activeClasses = ["border-blue-600", "text-gray-900"];
+            const inactiveClasses = [
+                "border-transparent",
+                "text-gray-400",
+            ];
+
+            function selectTab(name) {
+                buttons.forEach((btn) => {
+                    const isActive = btn.dataset.tab === name;
+                    btn.setAttribute("aria-selected", isActive);
+                    btn.classList.remove(
+                        ...activeClasses,
+                        ...inactiveClasses,
+                    );
+                    btn.classList.add(
+                        ...(isActive ? activeClasses : inactiveClasses),
+                    );
+                });
+                Object.entries(panels).forEach(([key, el]) => {
+                    el.classList.toggle("hidden", key !== name);
+                });
+            }
+
+            buttons.forEach((btn) =>
+                btn.addEventListener("click", () => selectTab(btn.dataset.tab)),
+            );
+        </script>
     </body>
 </html>
